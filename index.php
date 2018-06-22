@@ -1,6 +1,6 @@
 <?php
 
-$access_token = 'gRP11kd70ugrgwJ32KnBzLZHAHSMzYo4vMwPGqHOwZ78Etjax2ZtNFA9BVs6Fi9znJqyHwzZ3FRsFv3P1DoDTvEAqT6uwJ2z7WCc1B9C7eIvqu2tMTjNrNWHjkG129MMt+tozBJUMO8YGsVTmvyEiwdB04t89/1O/w1cDnyilFU=';
+$access_token = getenv('TOKEN');
 
 $url = 'https://api.line.me/v2/bot/message/reply';
 
@@ -20,7 +20,7 @@ $headers = array('Content-Type: application/json',
 
 // build request body
 $message = array('type' => 'text',
-                 'text' => getenv('KEY'));
+                 'text' => $message_text);
 
 $body = json_encode(array('replyToken' => $reply_token,
                           'messages'   => array($message)));
