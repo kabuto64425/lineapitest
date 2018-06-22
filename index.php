@@ -20,7 +20,7 @@ $headers = array('Content-Type: application/json',
 
 // build request body
 $message = array('type' => 'text',
-                 'text' => $message_text);
+                 'text' => getenv('KEY'));
 
 $body = json_encode(array('replyToken' => $reply_token,
                           'messages'   => array($message)));
